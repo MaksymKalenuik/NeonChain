@@ -1,0 +1,29 @@
+/* Styles for the post item section */
+.post-item-section {
+    height: 600px; /* Set the height of the section */
+    width: 100%; /* Make the section full-width */
+    position: relative; /* Set relative positioning to position child elements */
+    background-image: url('../images/posts/bg5.jpg'); /* Set background image */
+    background-size: cover; /* Ensure the background image covers the entire section */
+    background-position: center; /* Center the background image */
+    overflow: hidden; /* Hide any content that overflows the section */
+    z-index: 2; /* Set the stacking order */
+}
+
+/* Pseudo-element that adds a black translucent overlay */
+.post-item-section::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay absolutely within the section */
+    top: 0; /* Align the overlay to the top */
+    left: 0; /* Align the overlay to the left */
+    width: 100%; /* Make the overlay span the full width */
+    height: 100%; /* Make the overlay span the full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black translucent overlay (50% opacity) */
+    z-index: 3; /* Place the overlay above the background image */
+}
+
+/* Text styling inside the post item section */
+.post-item-section-text {
+    text-align: center; /* Center-align the text */
+    z-index: 4; /* Place the text above the overlay */
+}

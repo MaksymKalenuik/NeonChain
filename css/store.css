@@ -1,0 +1,41 @@
+/* Styles for the banner */
+.banner-store {
+    height: 500px; /* Set the height of the banner to 500px */
+    width: 100%; /* Make the banner span the full width of its parent container */
+    background-image: url('../images/banner-store.png'); /* Set the background image for the banner */
+    background-size: cover; /* Ensure the background image covers the entire banner */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+/* Styles for the store block */
+.store {
+    margin: 0; /* Remove any default margins */
+    background: black; /* Set the background color of the store block to black */
+    overflow: hidden; /* Prevent any child elements from overflowing beyond the block's boundaries */
+    position: relative; /* Set the store block to relative positioning for child element positioning */
+}
+
+/* Styles for the canvas (background) */
+canvas {
+    display: block; /* Make the canvas a block-level element */
+    width: 100%; /* Set the canvas width to always be 100% of its parent container */
+    height: 100%; /* Set the canvas height to always be 100% of its parent container */
+}
+
+/* Styles for the product list */
+.products-list {
+    position: relative; /* Set the product list to relative positioning */
+    z-index: 1; /* Ensure that the product list appears above the canvas */
+    padding-top: 50px; /* Add a top padding to create space between the product list and the top banner */
+}
+
+/* Positioning the canvas inside the product list */
+#background {
+    position: absolute; /* Position the canvas absolutely within the product list */
+    top: 0; /* Align the canvas to the top of the container */
+    left: 0; /* Align the canvas to the left of the container */
+    z-index: -1; /* Set the canvas to be behind other content in the product list */
+    width: 100%; /* Ensure the canvas takes up the full width of the container */
+    height: 100%; /* Ensure the canvas takes up the full height of the container */
+}

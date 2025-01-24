@@ -1,0 +1,105 @@
+/* Styles for the sidebar */
+.sidebar {
+    position: fixed; /* Fix the sidebar to the right side of the screen */
+    top: 0; /* Align the sidebar at the top of the page */
+    right: -350px; /* Initially position the sidebar off-screen to the right */
+    width: 350px; /* Set the sidebar width to 350px */
+    height: 100%; /* Make the sidebar span the full height of the page */
+    transition: right 0.5s ease; /* Apply a smooth transition for the sidebar's right position */
+    z-index: 999; /* Place the sidebar below the button */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Add shadow on the left side */
+    background-color: black; /* Set the sidebar background color to black */
+}
+
+/* Class to show the sidebar */
+.sidebar.active {
+    right: 0; /* Move the sidebar onto the screen */
+}
+
+/* Styles for the toggle button */
+#toggle-sidebar {
+    position: fixed; /* Fix the button position on the screen */
+    top: 50%; /* Vertically center the button */
+    right: 0; /* Position the button on the right side */
+    transform: translateY(-50%); /* Center the button vertically using transform */
+    z-index: 1001; /* Ensure the button is above the sidebar */
+    border-radius: 30px 0 0 30px; /* Round the left corners of the button */
+    padding: 10px 15px; /* Add padding inside the button */
+    transition: right 0.5s ease; /* Apply smooth transition for the button when the sidebar is toggled */
+    background-color: black; /* Set the button's background color to black */
+    text-align: center; /* Center the text inside the button */
+    font-weight: bold; /* Make the text bold */
+    font-size: 2rem; /* Set the font size */
+    display: flex; /* Use flexbox for the button's inner layout */
+    align-items: center; /* Vertically center the content in the button */
+    justify-content: center; /* Horizontally center the content in the button */
+    box-shadow: 0 0 30px #8a2be2; /* Add a glowing shadow effect around the button */
+    animation: shadowColorChange 3s infinite; /* Apply animation for color-changing shadow */
+}
+
+/* When the sidebar is active, shift the button to the left */
+.sidebar.active + #toggle-sidebar {
+    right: 350px; /* Move the button to the left when the sidebar is open */
+}
+
+/* Add rotation animation for the arrow */
+.rotate-180 {
+    transform: rotate(180deg); /* Rotate the arrow by 180 degrees */
+    transition: transform 0.5s ease; /* Smooth transition for rotation */
+}
+
+/* Initial state of the arrow icon (no rotation) */
+#arrow-icon {
+    padding: 10px; /* Add padding around the arrow */
+    font-size: 30px; /* Set the size of the arrow */
+    transition: transform 0.5s ease; /* Smooth transition for rotation */
+    animation: textColorChange 3s infinite; /* Apply color-changing animation to the text */
+}
+
+/* Styles for images inside the sidebar */
+.side-img {
+    max-width: 70%; /* Set the maximum width of images to 70% */
+}
+
+/* Transition for sidebar items */
+.side-item {
+    transition: transform 0.3s ease; /* Smooth transition when an item is hovered */
+}
+
+/* Scale the sidebar item slightly when hovered */
+.side-item:hover {
+    transform: scale(1.02); /* Slightly enlarge the item on hover */
+}
+
+/* Transition for the image inside the sidebar item */
+.side-img {
+    transition: transform 0.3s ease; /* Smooth transition for scaling the image */
+}
+
+/* Enlarge the image when the parent item is hovered */
+.side-item:hover .side-img {
+    transform: scale(1.1); /* Scale the image up on hover */
+}
+
+/* Keyframes for color-changing text animation */
+@keyframes textColorChange {
+    0% {
+        color: #8a2be2; /* Start with purple color */
+    }
+
+    25% {
+        color: #ff69b4; /* Change to bright pink color */
+    }
+
+    50% {
+        color: #00ffff; /* Change to cyan (light blue) color */
+    }
+
+    75% {
+        color: #32cd32; /* Change to lime green color */
+    }
+
+    100% {
+        color: #8a2be2; /* Return to the initial purple color */
+    }
+}

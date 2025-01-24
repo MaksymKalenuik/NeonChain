@@ -1,0 +1,131 @@
+/* Styles for the blog banner */
+.banner-blog {
+    height: 600px; /* Set the height of the banner */
+    width: 100%; /* Make the banner full width */
+    position: relative; /* Position relative for the inner absolute elements */
+    background-image: url('../images/posts/bg9.jpg'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    overflow: hidden; /* Hide any content that overflows the container */
+}
+
+/* Add an overlay with a dark shade */
+.banner-blog::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay absolutely */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make the overlay cover the full width */
+    height: 100%; /* Make the overlay cover the full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Place it above the background image */
+}
+
+/* Style for the text inside the banner */
+.banner-blog-text {
+    position: relative; /* Position relative to ensure proper stacking */
+    z-index: 2; /* Position the text above the dark overlay */
+    color: white; /* Set the text color to white for contrast */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add padding around the text */
+}
+
+/* Container for floating image animation */
+.floating-image2 {
+    width: 100%; /* Set the image container width */
+    height: 400px; /* Set the height of the container */
+    position: relative; /* Ensure positioning is relative to this container */
+    overflow: hidden; /* Hide any overflowing parts of the image */
+}
+
+/* Style for the floating image inside the container */
+.floating-image2 img {
+    width: 50%; /* Set the image width */
+    height: auto; /* Maintain the image's aspect ratio */
+    position: absolute; /* Position the image absolutely within the container */
+    top: 50%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to center */
+    animation: circularMotion 12s infinite linear; /* Apply circular motion animation */
+}
+
+/* Neon text styles with glowing effect */
+.neon-text h1,
+.neon-text h5 {
+    color: #a569bd; /* Pale purple color for the text */
+    text-shadow: 
+        0 0 3px #a569bd, 
+        0 0 6px #a569bd, 
+        0 0 10px #8e44ad, 
+        0 0 15px #8e44ad; /* Glowing text shadow for the neon effect */
+    font-weight: 600; /* Semi-bold text */
+}
+
+/* Lighter color and shadow effect for smaller text (h5) */
+.neon-text h5 {
+    color: #d2b4de; /* Lighter purple color for the smaller text */
+    text-shadow: 
+        0 0 2px #d2b4de, 
+        0 0 4px #a569bd, 
+        0 0 6px #8e44ad; /* Glowing text shadow with a different intensity */
+}
+
+/* Apply the neon effect to the main header (h1) */
+.neon-text h1 {
+    color: #d2b4de; /* Lighter color for the main heading */
+    text-shadow: 
+        0 0 2px #d2b4de, 
+        0 0 4px #a569bd, 
+        0 0 6px #8e44ad; /* Glowing shadow effect */
+}
+
+/* Center the blog content within the container */
+.center-blog-content {
+    position: relative; /* Position relative for stacking context */
+    background-image: url('../images/posts/bg12.jpg'); /* Background image */
+    background-size: cover; /* Ensure the background image covers the container */
+    background-position: center; /* Center the background image */
+    overflow: hidden; /* Hide any overflowing content */
+    width: 100%; /* Full container width */
+}
+
+/* Apply a blur and gradient overlay to the background */
+.center-blog-content::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position the overlay absolutely */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make the overlay span the full width */
+    height: 100%; /* Make the overlay span the full height */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); /* Gradient for darkening */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    z-index: 1; /* Place it on top of the background */
+}
+
+/* Style the content inside the center container */
+.center-blog-content .content {
+    position: relative; /* Position the content relative to its container */
+    z-index: 2; /* Ensure content is above the blurred overlay */
+    padding: 20px; /* Add padding around the content */
+}
+
+/* Styling for the post card */
+.post-card {
+    background-color: black; /* Set a black background for the card */
+    border: 5px solid; /* Set the border thickness */
+    border-image: linear-gradient(45deg, rgba(138, 43, 226, 0.7), #00bfff, #8a2be2, #b488ff) 1; /* Gradient border with multiple colors */
+    animation: neon-border 3s infinite linear; /* Apply the neon border animation */
+}
+
+/* Keyframes for the neon border animation */
+@keyframes neon-border {
+    0% {
+        border-image-source: linear-gradient(45deg, rgba(138, 43, 226, 0.7), #00bfff, #8a2be2, #b488ff); /* Initial gradient */
+    }
+    50% {
+        border-image-source: linear-gradient(45deg, #00bfff, #8a2be2, rgba(138, 43, 226, 0.7), #b488ff); /* Animated gradient */
+    }
+    100% {
+        border-image-source: linear-gradient(45deg, rgba(138, 43, 226, 0.7), #00bfff, #8a2be2, #b488ff); /* Final gradient */
+    }
+}

@@ -1,0 +1,361 @@
+/*
+Theme name: 
+Theme URI: -
+Description: First theme 
+Author: Maksym Kaleniuk
+Author URI: -
+Version: 1.0.0
+*/
+
+
+/* General */
+html {
+    scroll-behavior: smooth; /* Apply smooth scrolling when navigating to anchor links on the page */
+}
+
+/* Remove underline from all anchor links */
+a {
+    text-decoration: none!important; /* Remove the default underline from links, overriding any other styles */
+}
+
+/* Set the background color of the entire page to black */
+body {
+    background-color: black; /* Set the background color of the body to black */
+}
+
+/* Webkits */
+::-webkit-scrollbar {
+    width: 12px; /* Set the width of the vertical scrollbar to 12px */
+    height: 12px; /* Set the height of the horizontal scrollbar to 12px */
+}
+
+/* Styling for the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #8a2be2; /* Set the background color of the thumb to neon purple (#8a2be2) */
+    border-radius: 10px; /* Apply rounded corners with a radius of 10px for a smooth look */
+    border: 2px solid #fff; /* Add a 2px white border around the thumb for contrast */
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.8); /* Apply a glowing neon shadow to the thumb for a glowing effect */
+}
+
+/* Styling for the scrollbar track (the area the thumb slides within) */
+::-webkit-scrollbar-track {
+    background: #222; /* Set a dark background for the scrollbar track (#222) */
+    border-radius: 10px; /* Apply rounded corners to the track */
+}
+
+/* Hide the scrollbar buttons (arrows) */
+::-webkit-scrollbar-button {
+    display: none; /* Hide the buttons for scrolling */
+}
+
+
+/* Navbar */
+.navbar {
+    -webkit-backdrop-filter: blur(4px); /* Apply a blur effect to the background for Safari */
+    -moz-backdrop-filter: blur(4px); /* Apply a blur effect to the background for Firefox */
+    backdrop-filter: blur(4px); /* Apply a blur effect to the background for other modern browsers */
+    padding: 10px 20px; /* Add padding of 10px on top and bottom, and 20px on the sides */
+    border-bottom-left-radius: 40px; /* Round the bottom-left corner with a radius of 40px */
+    border-bottom-right-radius: 40px; /* Round the bottom-right corner with a radius of 40px */
+    width: 80%; /* Set the width of the navbar to 80% of its parent container */
+    background-color: rgba(0, 0, 0, 0.7); /* Set a semi-transparent black background with 70% opacity */
+    position: absolute; /* Position the navbar absolutely on the page */
+    z-index: 10; /* Set the z-index to 10 to ensure the navbar appears above other elements */
+    left: 50%; /* Position the navbar in the middle horizontally */
+    transform: translateX(-50%); /* Center the navbar horizontally by moving it left by 50% of its width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a subtle shadow below the navbar */
+}
+
+/* Styling for images inside navbar links */
+.nav-link img {
+    height: 40px; /* Set the height of images inside navbar links to 40px */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: auto; /* Center the image horizontally */
+}
+
+/* Navbar items (links) container */
+.navbar-nav {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: center; /* Center the navbar items horizontally */
+}
+
+/* Styling for the brand image in the navbar */
+.navbar-brand img {
+    height: 50px; /* Set the height of the brand logo to 50px */
+    width: auto; /* Maintain the aspect ratio of the brand logo */
+}
+
+/* Content section */
+.content {
+    z-index: 3; /* Set the z-index to 3 to ensure the content appears above other elements with lower z-index */
+}
+
+
+/* Banners */
+.banner {
+    position: relative; /* Set the position to relative to allow positioning of pseudo-elements */
+    width: 100%; /* Set the width of the banner to 100% of its parent container */
+    background-image: url('../images/bannertest.webp'); /* Set the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: right 5%; /* Position the background image 5% from the right */
+    border-bottom-left-radius: 40px; /* Apply rounded corners on the bottom left with a radius of 40px */
+    border-bottom-right-radius: 40px; /* Apply rounded corners on the bottom right with a radius of 40px */
+    overflow: hidden; /* Hide any content that overflows the banner container */
+    height: 600px;
+}
+
+/* Overlay effect on the banner */
+.banner::before {
+    content: ''; /* Generate empty content for the pseudo-element */
+    position: absolute; /* Position the pseudo-element absolutely within the .banner */
+    top: 0; /* Align the pseudo-element to the top of the container */
+    left: 0; /* Align the pseudo-element to the left of the container */
+    width: 50%; /* Set the width to cover 50% of the banner */
+    height: 100%; /* Set the height to cover the entire height of the banner */
+    background: rgba(0, 0, 0, 0.6); /* Set a semi-transparent black background */
+    filter: blur(70px); /* Apply a blur effect to the overlay */
+    z-index: 1; /* Set the z-index to place the overlay above the banner's background */
+}
+
+/* Styling for the banner title */
+.banner-title {
+    font-size: 48px; /* Set the font size to 48px */
+    font-family: 'Montserrat', sans-serif; /* Use the Montserrat font family */
+    font-weight: bold; /* Make the title bold */
+    color: black; /* Set the text color to black */
+    -webkit-text-stroke: 1px #ad5bfa; /* Apply a 1px stroke to the text with a purple color */
+    text-shadow:
+        0 0 10px rgba(138, 43, 226, 0.5), /* Apply a soft purple glowing shadow */
+        0 0 20px rgba(138, 43, 226, 0.7); /* Apply a stronger purple glowing shadow */
+}
+
+/* About section banner container */
+.about-banner {
+    position: relative; /* Set the position to relative for positioning child elements */
+    background-image: url('../images/banner2.png'); /* Set the background image for the about banner */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Overlay effect on the about banner */
+.about-banner::before {
+    content: ''; /* Generate empty content for the pseudo-element */
+    position: absolute; /* Position the pseudo-element absolutely within the .about-banner */
+    top: 0; /* Align the pseudo-element to the top of the container */
+    left: 0; /* Align the pseudo-element to the left of the container */
+    width: 100%; /* Set the width to cover the entire width of the banner */
+    height: 100%; /* Set the height to cover the entire height of the banner */
+    background-color: rgba(0, 0, 0, 0.7); /* Apply a semi-transparent black background */
+    z-index: 1; /* Set the z-index to layer the overlay above the background */
+}
+
+/* Ensure all child elements in the about banner are above the overlay */
+.about-banner * {
+    position: relative; /* Set all child elements to have a relative position */
+    z-index: 2; /* Set a higher z-index to ensure they appear above the overlay */
+}
+
+
+/* Main Numbers */
+.number-container {
+    color: #8a2be2; /* Set the text color to blue-violet (#8a2be2) */
+    border: 1px solid #8a2be2; /* Set a border with blue-violet color (#8a2be2) */
+    height: 100px; /* Set the height of the container to 100px */
+    border-radius: 40px; /* Apply rounded corners with a radius of 40px */
+    text-align: center; /* Center the text horizontally */
+    font-weight: bold; /* Make the text bold */
+    font-size: 2rem; /* Set the font size to 2rem */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align items to the center */
+    justify-content: center; /* Horizontally align items to the center */
+    box-shadow: 0 0 20px #8a2be2; /* Add a glowing shadow with blue-violet color around the container */
+    animation: shadowColorChange 3s infinite; /* Apply the 'shadowColorChange' animation to change the shadow color every 3 seconds */
+}
+
+.number-label {
+    color: #8a2be2; /* Set the text color of the label to blue-violet (#8a2be2) */
+    font-size: 1.2rem; /* Set the font size of the label to 1.2rem */
+    font-weight: normal; /* Set the font weight to normal */
+    margin-top: 10px; /* Add 10px margin at the top of the label */
+    text-align: center; /* Center the label text horizontally */
+    width: 100%; /* Set the width of the label to 100% */
+}
+
+
+/* Text styles */
+.text-color-neon {
+    color: #8a2be2; /* Set the initial text color to blue-violet (#8a2be2) */
+    font-size: 18px; /* Set the font size to 18px */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and text-shadow on hover */
+}
+
+.general-text-color {
+    color: #8a2be2 !important; /* Force the text color to blue-violet (#8a2be2) with !important */
+}
+
+.general-text-color-easy {
+    color: #9d5fd7 !important; /* Set text color to a slightly lighter shade of purple (#9d5fd7) */
+}
+
+.general-text-color-hover-icons {
+    color: #b488ff !important; /* Set text color to a soft purple (#b488ff) */
+    text-shadow: 0 0 8px rgba(180, 136, 255, 0.4), 0 0 15px rgba(180, 136, 255, 0.2); /* Add a glowing effect with soft purple shadow */
+}
+
+.general-text-color-hover {
+    color: #8a2be2 !important; /* Set text color to blue-violet (#8a2be2) with !important */
+}
+
+.general-text-color-hover:hover {
+    color: #00bfff !important; /* Change text color to light blue (#00bfff) on hover */
+}
+
+.general-text-color-hover-icons:hover {
+    color: #00bfffdb !important; /* Change text color to light blue with some opacity on hover */
+}
+
+.text-color-neon:hover {
+    color: #00bfff; /* Change the text color to light blue (#00bfff) on hover */
+    text-shadow: 
+        0 0 5px #00bfff, /* Add a light glowing effect with multiple layers of blue shadows */
+        0 0 10px #00bfff, 
+        0 0 15px #00bfff, 
+        0 0 20px #00bfff;
+}
+
+/* Buttons */
+.neon-button {
+    background-color: transparent; /* Make the button background transparent */
+    border: 2px solid #8a2be2; /* Set a solid border with blue-violet color (#8a2be2) */
+    border-radius: 30px; /* Apply rounded corners with a radius of 30px */
+    color: #8a2be2; /* Set the text color to blue-violet (#8a2be2) */
+    padding: 15px 30px; /* Add padding around the button (15px vertical, 30px horizontal) */
+    font-size: 18px; /* Set the font size of the text inside the button */
+    font-family: 'Arial', sans-serif; /* Set the font family to Arial, sans-serif fallback */
+    text-transform: uppercase; /* Transform the text to uppercase */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    outline: none; /* Remove the default outline on focus */
+    position: relative; /* Set position relative for possible child element positioning */
+    overflow: hidden; /* Hide overflow content outside the button */
+    transition: color 0.3s ease, border 0.3s ease, border-radius 0.5s ease; /* Smooth transitions for color, border, and border-radius */
+}
+
+.neon-button:hover {
+    color: #00bfff; /* Change the text color to light blue (#00bfff) on hover */
+    animation: pulse 1.5s infinite; /* Apply the "pulse" animation infinitely */
+    border: 2px solid #00bfff; /* Change the border color to light blue on hover */
+    border-radius: 10px; /* Apply a smaller border-radius of 10px on hover */
+}
+
+.neon-button-small {
+    background-color: transparent; /* Make the small button background transparent */
+    border: 2px solid #8a2be2; /* Set a solid border with blue-violet color (#8a2be2) */
+    border-radius: 30px; /* Apply rounded corners with a radius of 30px */
+    color: #8a2be2; /* Set the text color to blue-violet (#8a2be2) */
+    font-size: 10px; /* Set the font size of the text inside the small button */
+    font-family: 'Arial', sans-serif; /* Set the font family to Arial, sans-serif fallback */
+    text-transform: uppercase; /* Transform the text to uppercase */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    outline: none; /* Remove the default outline on focus */
+    position: relative; /* Set position relative for possible child element positioning */
+    overflow: hidden; /* Hide overflow content outside the button */
+    transition: color 0.3s ease, border 0.3s ease, border-radius 0.5s ease; /* Smooth transitions for color, border, and border-radius */
+}
+
+.neon-button-small:hover {
+    color: #00bfff; /* Change the text color to light blue (#00bfff) on hover */
+    animation: pulse 1.5s infinite; /* Apply the "pulse" animation infinitely */
+    border: 2px solid #00bfff; /* Change the border color to light blue on hover */
+    border-radius: 10px; /* Apply a smaller border-radius of 10px on hover */
+}
+
+
+/* Animations */
+@keyframes shadowColorChange {
+    0% {
+        box-shadow: 0 0 10px #8a2be2; /* Set initial shadow color to blue-violet (#8a2be2) */
+    }
+
+    25% {
+        box-shadow: 0 0 10px #ff69b4; /* Change shadow color to hot pink (#ff69b4) */
+    }
+
+    50% {
+        box-shadow: 0 0 10px #00ffff; /* Change shadow color to cyan (#00ffff) */
+    }
+
+    75% {
+        box-shadow: 0 0 10px #32cd32; /* Change shadow color to lime green (#32cd32) */
+    }
+
+    100% {
+        box-shadow: 0 0 10px #8a2be2; /* Reset shadow color back to blue-violet (#8a2be2) */
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px #8a2be2, 0 0 40px #8a2be2; /* Initial and final pulse shadow with blue-violet color */
+    }
+
+    50% {
+        box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff; /* Increase the size of the pulse with light blue color */
+    }
+}
+
+
+/* Shop items styles */
+.carousel-shop .item {
+    display: flex; /* Set the display of the carousel item to flex */
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align the items to the top of the container */
+    padding: 10px; /* Add padding around each carousel item */
+}
+
+.product-item {
+    width: 100%; /* Set the width of the product item to 100% of the container */
+    max-width: 300px; /* Set the maximum width of the product item to 300px */
+    margin: auto; /* Center the product item within its container */
+    flex: 1 1 auto; /* Allow the product item to grow and shrink automatically */
+    display: flex; /* Set the display to flex to arrange child elements */
+    flex-direction: column; /* Arrange the child elements in a vertical column */
+    transition: transform 0.5s; /* Add a smooth transition effect for transform property */
+}
+
+.product-content {
+    flex-grow: 1; /* Allow the product content to take available space */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange the content vertically */
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Align the text content to the center */
+}
+
+.product-item img {
+    object-fit: contain; /* Scale the image to fit within the container while preserving aspect ratio */
+    border-radius: 10px; /* Apply rounded corners to the image */
+    transition: border-radius 0.5s, transform 0.5s; /* Smooth transition for border-radius and transform properties */
+}
+
+
+/* Footer */
+.footer {
+    color: #aaa; /* Set the text color of the footer to a light gray */
+}
+
+.footer h5 {
+    font-weight: 600; /* Make the h5 elements in the footer bold */
+}
+
+.footer ul li a {
+    transition: color 0.3s; /* Add a smooth transition effect for the color change on the links */
+}
+
+.footer ul li a:hover {
+    text-decoration: none; /* Remove underline on hover over links in the footer */
+}
+
+.footer .list-unstyled.d-flex li a i {
+    font-size: 1.2rem; /* Set the font size of icons inside the links to 1.2rem */
+    transition: color 0.3s; /* Add a smooth transition effect for the color change on icon hover */
+}
